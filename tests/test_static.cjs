@@ -1,0 +1,31 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs/promises');
+const os = require('node:os');
+const path = require('node:path');
+const {createStaticServer} = require('../scripts/serve.cjs');
+test('production serves build data, HEAD and fonts without exposing sources', async t => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'onboarding-static-'));
+  const server = createStaticServer(root);
+  t.after(async () => {
+    await new Promise(resolve => server.close(resolve));
+    assert.equal(path.dirname(root), path.resolve(os.tmpdir()));
+    assert.ok(path.basename(root).startsWith('onboarding-static-'));
+    await fs.rm(root, {recursive:true, force:true});
+  });
+  await fs.mkdir(path.join(root, 'data'));
+  await fs.mkdir(path.join(root, 'assets'));
+  await fs.writeFile(path.join(root, 'index.html'), '<h1>Team</h1>');
+  await fs.writeFile(path.join(root, 'data/participants.json'), '[{"name":"Anna"}]');
+  await fs.copyFile(path.join(__dirname, '../assets/golos-text.ttf'), path.join(root, 'assets/golos-text.ttf'));
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  const url = `http://127.0.0.1:${server.address().port}`;
+  assert.match(await (await fetch(url)).text(), /Team/);
+  assert.deepEqual(await (await fetch(url+'/data/participants.json')).json(), [{name:'Anna'}]);
+  const head = await fetch(url, {method:'HEAD'});
+  assert.equal(head.status, 200); assert.equal(await head.text(), '');
+  assert.equal((await fetch(url+'/assets/golos-text.ttf')).headers.get('content-type'), 'font/ttf');
+  assert.equal((await fetch(url+'/server.cjs')).status, 404);
+  assert.equal((await fetch(url+'/.env')).status, 404);
+  assert.equal((await fetch(url, {method:'POST'})).status, 405);
+});

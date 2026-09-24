@@ -1,0 +1,26 @@
+﻿name: Проверка карточек
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Проверить карточки
+        run: node scripts/participants.cjs
+      - name: Проверить приложение
+        run: node --test tests/test_profiles.cjs tests/test_ui.cjs tests/test_static.cjs
+      - name: Проверить сборку сайта
+        run: node scripts/build.cjs
+
+      - name: Проверить Docker Compose
+        run: docker compose config --quiet
+      - name: Проверить Docker-образ
+        run: docker build -t it-onboarding:check .
+

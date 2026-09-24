@@ -1,0 +1,9 @@
+﻿{
+  "name": "Ваше имя",
+  "github": "@username",
+  "direction": "Выберите направление",
+  "skills": ["Навык 1", "Навык 2"],
+  "fact": "Напишите короткий факт о себе",
+  "projectTitle": "",
+  "projectDescription": ""
+}

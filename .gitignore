@@ -1,0 +1,21 @@
+# Generated site and local dependencies
+/dist/
+node_modules/
+coverage/
+.cache/
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+
+# Temporary files and operating system metadata
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+Desktop.ini
+__pycache__/
+*.pyc

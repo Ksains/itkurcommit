@@ -1,0 +1,14 @@
+# Add the site to the same Docker network as the existing NGINX container.
+# Set PROXY_NETWORK to the real network name before using this override.
+services:
+  web:
+    networks:
+      default: {}
+      proxy:
+        aliases:
+          - onboarding-web
+
+networks:
+  proxy:
+    external: true
+    name: ${PROXY_NETWORK:?Set PROXY_NETWORK to the Docker network shared with NGINX}

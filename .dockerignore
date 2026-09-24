@@ -1,0 +1,12 @@
+*
+!Dockerfile
+!index.html
+!server.cjs
+!assets/
+!assets/**
+!participants/
+!participants/**
+!scripts/
+!scripts/**
+!tests/
+!tests/**

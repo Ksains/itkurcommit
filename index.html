@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Участники IT-раздела и проекты, которые они хотят реализовать" />
+  <title>IT-раздел</title>
+  <link rel="preload" href="assets/golos-text.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/profiles.js" defer></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/ui.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+<div class="page">
+  <header class="site-header">
+    <a class="brand" href="#main" aria-label="IT-раздел, начало страницы"><span class="brand-mark" aria-hidden="true">it.</span><span>IT-раздел<span class="brand-caption">Знакомство с командой</span></span></a>
+    <nav aria-label="Разделы страницы"><a href="#team">Участники</a><a href="#guide">Гайд по Git</a><a href="#editor">Моя карточка <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Каждый начинает с первого коммита</span>
+        <h1 id="hero-title">Люди<br />и их <span>идеи.</span></h1>
+        <p class="hero-description">Расскажите о себе, познакомьтесь с командой и сделайте свой первый вклад через GitHub. Если есть идея проекта, поделитесь ею.</p>
+        <div class="actions"><a class="button" href="#editor">Добавить свою карточку <span aria-hidden="true">↗</span></a><a class="text-link" href="#guide">Впервые здесь? Начните с гайда <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-note">Одна карточка. Один Pull Request. Начало чего-то большего.</p>
+      </div>
+      <aside class="intro-card" aria-labelledby="intro-title">
+        <div class="intro-heading"><span class="label">Ваш первый вклад</span><span class="mini-badge">Через GitHub</span></div>
+        <h2 id="intro-title">От «привет»<br /> до части команды</h2>
+        <ol class="intro-steps">
+          <li><span class="intro-number" aria-hidden="true">01</span><div><strong>Расскажите о себе</strong><p>Навыки, интересы и, если есть, идея проекта.</p></div></li>
+          <li><span class="intro-number" aria-hidden="true">02</span><div><strong>Отправьте карточку через Git</strong><p>Все команды есть в коротком гайде.</p></div></li>
+          <li><span class="intro-number" aria-hidden="true">03</span><div><strong>Появитесь на общем сайте</strong><p>После принятия Pull Request руководителем.</p></div></li>
+        </ol>
+        <div class="intro-footer">Идею проекта можно добавить позже.</div>
+      </aside>
+    </section>
+    <section id="team" class="section team-section" aria-labelledby="team-title">
+      <div class="section-heading"><div><span class="eyebrow">Знакомьтесь</span><h2 id="team-title">Участники команды</h2></div><span id="team-count" class="count-badge"></span></div>
+      <p id="team-message" class="hint team-message" role="status">Загрузка карточек…</p>
+      <button id="reload-team" class="secondary" type="button" hidden>Повторить загрузку</button>
+      <div id="team-empty" class="empty-state" hidden>
+        <div class="empty-icon" aria-hidden="true"><svg width="38" height="38" viewBox="0 0 38 38" fill="none"><rect x="5" y="3" width="28" height="32" rx="7" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="14" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M11 27c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <h3>Первая карточка может быть вашей</h3>
+        <p>Пока мы только собираемся. Расскажите, что вам интересно<br class="desktop-break" /> и какой проект вы хотите реализовать.</p>
+        <a class="button secondary" href="#editor">Стать первым участником <span aria-hidden="true">↗</span></a>
+        <span class="empty-caption">Карточка появится здесь после принятия вашего PR.</span>
+      </div>
+      <div id="team-list" class="team-grid"></div>
+      <noscript>Включите JavaScript, чтобы увидеть карточки команды и заполнить форму.</noscript>
+    </section>
+    <section id="guide" class="section guide" aria-labelledby="guide-title">
+      <div class="guide-intro">
+        <span class="eyebrow">Всё получится</span><h2 id="guide-title">Первый PR.<br /> Шаг за шагом.</h2>
+        <p>Заполните карточку, добавьте один файл через Git и предложите его команде. Мы собрали весь путь здесь.</p>
+        <div class="guide-note"><span class="label">Что понадобится</span><p>Браузер, аккаунт GitHub и Git на компьютере. Запускать сайт у себя не нужно.</p></div>
+        <p class="hint">PR (Pull Request) — предложение добавить ваши изменения в общий репозиторий.</p>
+      </div>
+      <div class="guide-steps">
+        <details class="step" open>
+          <summary><span class="step-number">00</span><span><strong>Подготовьтесь</strong><span class="step-caption">Аккаунт GitHub и установка Git</span></span><span class="chevron" aria-hidden="true"></span></summary>
+          <div class="step-body"><p>Создайте аккаунт на <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a> и установите <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">Git ↗</a>. Попросите руководителя прислать ссылку на общий репозиторий.</p><p>Откройте терминал, в Windows подойдёт PowerShell. Проверьте установку:</p>
+            <div class="command-block"><div class="command-heading"><span>Терминал · Проверка Git</span><button type="button" class="copy-button" data-copy="command-version" aria-label="Скопировать команду проверки Git">Копировать</button></div><pre><code id="command-version">git --version</code></pre></div>
+            <p>Если впервые работаете с Git, настройте автора коммитов. Замените пример своими данными:</p>
+            <div class="command-block"><div class="command-heading"><span>Терминал · Ваши данные</span><button type="button" class="copy-button" data-copy="command-config" aria-label="Скопировать команды настройки Git">Копировать</button></div><pre><code id="command-config">git config --global user.name "Ваше имя"
+git config --global user.email "your-email@example.com"</code></pre></div>
+            <p class="hint">Используйте почту аккаунта GitHub или адрес noreply из Settings → Emails. Если Git уже настроен, менять настройки не нужно. Если команда не найдена, перезапустите терминал после установки.</p><p class="step-result"><span aria-hidden="true">✓</span> Результат: аккаунт создан, Git готов к работе.</p>
+          </div>
+        </details>
+        <details class="step">
+          <summary><span class="step-number">01</span><span><strong>Создайте свою рабочую копию</strong><span class="step-caption">Fork, скачивание и отдельная ветка</span></span><span class="chevron" aria-hidden="true"></span></summary>
+          <div class="step-body"><p>Откройте репозиторий по ссылке руководителя и нажмите <strong>Fork → Create fork</strong>. Это создаст вашу копию. В своём форке скопируйте HTTPS адрес из меню Code.</p><p>Замените ССЫЛКА_НА_ФОРК, ИМЯ_ПАПКИ и ВАШ_ЛОГИН своими значениями. Путь с пробелами заключите в кавычки.</p>
+            <div class="command-block"><div class="command-heading"><span>Терминал · Рабочая копия</span><button type="button" class="copy-button" data-copy="command-fork" aria-label="Скопировать команды создания рабочей копии">Копировать</button></div><pre><code id="command-fork">git clone ССЫЛКА_НА_ФОРК
+cd ИМЯ_ПАПКИ
+git switch -c onboarding/ВАШ_ЛОГИН</code></pre></div>
+            <p class="step-result"><span aria-hidden="true">✓</span> Результат: проект на компьютере, вы в своей ветке.</p>
+          </div>
+        </details>
+        <details class="step">
+          <summary><span class="step-number">02</span><span><strong>Расскажите о себе</strong><span class="step-caption">Заполните форму и скачайте карточку</span></span><span class="chevron" aria-hidden="true"></span></summary>
+          <div class="step-body"><p>В <a href="#editor">форме ниже</a> расскажите о себе. Если есть идея проекта, опишите её; этот раздел необязателен. Скачайте JSON и положите его в папку <code>participants</code> своего форка.</p><p>Имя файла должно совпадать с логином в нижнем регистре, например <code>amir.json</code>. Если браузер добавил к имени (1), удалите этот суффикс. Каждый добавляет только свой файл.</p><p class="hint">Форму заполняйте на этом сайте. Пока файл не принят в общий репозиторий, карточку видите только вы в предпросмотре.</p><a class="text-link" href="#editor">Перейти к форме <span aria-hidden="true">↗</span></a><p class="step-result"><span aria-hidden="true">✓</span> Результат: ваш JSON лежит в папке participants.</p></div>
+        </details>
+        <details class="step">
+          <summary><span class="step-number">03</span><span><strong>Сохраните и отправьте изменение</strong><span class="step-caption">Три команды: add, commit и push</span></span><span class="chevron" aria-hidden="true"></span></summary>
+          <div class="step-body"><p>В терминале скачанной копии выполните три команды. Замените ВАШ_ЛОГИН своим логином.</p><p><code>onboarding/ВАШ_ЛОГИН</code> — название ветки из шага 01. Это не папка: сам файл лежит в <code>participants</code>.</p>
+            <div class="command-block"><div class="command-heading"><span>Терминал · Отправка карточки</span><button type="button" class="copy-button" data-copy="command-push" aria-label="Скопировать команды коммита и отправки">Копировать</button></div><pre><code id="command-push">git add participants/ВАШ_ЛОГИН.json
+git commit -m "feat: добавить свою карточку"
+git push -u origin onboarding/ВАШ_ЛОГИН</code></pre></div>
+            <p class="hint">Коммит сохраняет изменение в истории Git. Push отправляет его в ваш форк на GitHub.</p><p class="step-result"><span aria-hidden="true">✓</span> Результат: карточка отправлена в вашу ветку на GitHub.</p>
+          </div>
+        </details>
+        <details class="step">
+          <summary><span class="step-number">04</span><span><strong>Предложите карточку команде</strong><span class="step-caption">Pull Request и проверка руководителем</span></span><span class="chevron" aria-hidden="true"></span></summary>
+          <div class="step-body"><p>На GitHub нажмите <strong>Compare &amp; pull request</strong>. В base repository выберите общий репозиторий команды, а в head repository — свой форк и учебную ветку.</p><p>Во вкладке Files changed должна быть только ваша карточка. Создайте PR и отправьте ссылку руководителю.</p><p>Проверка запустится автоматически. Если она сообщит об ошибке, откройте Checks и исправьте свой файл. Повторите коммит и push в той же ветке: PR обновится.</p><p class="step-result"><span aria-hidden="true">✓</span> Результат: руководитель получил вашу работу на проверку.</p></div>
+        </details>
+        <div class="publication-note"><span class="label">А дальше — вы в команде</span><h3>Приняли PR? До встречи в галерее.</h3><p>После коммита и push общий сайт ещё не меняется. Когда руководитель примет PR и обновит сайт, ваша карточка появится в общей галерее. Дождитесь публикации и обновите страницу.</p></div>
+        <p id="copy-status" class="sr-only" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+    <section id="editor" class="section editor-section" aria-labelledby="editor-title">
+      <div class="section-heading"><div><span class="eyebrow">Теперь ваш ход</span><h2 id="editor-title">Добавьте свою карточку</h2></div><span class="hint">Сначала черновик. Затем первый вклад.</span></div>
+      <div class="workspace">
+        <form id="onboarding" class="card editor-form">
+          <fieldset><legend>О себе</legend><p class="form-description">Немного о том, кто вы и что вам интересно.</p>
+            <div class="form-grid">
+              <label>Имя<input name="name" autocomplete="name" placeholder="Как к вам обращаться" required minlength="2" maxlength="100" /></label>
+              <label>Логин GitHub<input name="github" placeholder="@yourlogin" autocapitalize="none" spellcheck="false" required maxlength="40" /></label>
+              <label>Направление<input name="direction" placeholder="Frontend, дизайн…" required minlength="2" maxlength="120" /></label>
+              <label>Навыки<input name="skills" placeholder="HTML, CSS" required maxlength="1200" aria-describedby="skills-help" /><small id="skills-help">Не менее двух, через запятую.</small></label>
+              <label class="full-width">О себе<textarea name="fact" placeholder="Что вам интересно? Чему хочется научиться?" required minlength="15" maxlength="1000" aria-describedby="fact-help"></textarea><small id="fact-help">Не менее 15 символов.</small></label>
+            </div>
+          </fieldset>
+          <fieldset><legend>Проект <span class="optional-label">необязательно</span></legend><p class="form-description">Если у вас есть идеи, то опишите их. Этот раздел можно оставить пустым.</p>
+            <label>Название проекта<input name="projectTitle" placeholder="Например, навигатор для первокурсников" minlength="3" maxlength="150" /></label>
+            <label>Описание проекта<textarea name="projectDescription" placeholder="Что хотите сделать, для кого и чем это будет полезно?" minlength="30" maxlength="2000" aria-describedby="project-help"></textarea><small id="project-help">Если заполняете описание, напишите не менее 30 символов.</small></label>
+          </fieldset>
+          <div class="form-footer"><p>Скачайте файл, добавьте его через Git и отправьте Pull Request. Карточка появится на сайте после принятия руководителем.</p><button type="submit">Скачать свою карточку <span aria-hidden="true">↓</span></button><p id="save-status" class="hint" role="status">Черновик хранится в этом браузере. Заполнение формы ещё не публикует карточку.</p></div>
+        </form>
+        <section id="preview" aria-labelledby="preview-title"><div class="preview-heading"><h3 id="preview-title">Так вас увидит команда</h3><span class="mini-badge">Предпросмотр</span></div><div id="draft-card"></div><p class="preview-note">Этот черновик виден только вам.<br />Скачанный файл отправьте через Git по гайду выше.</p></section>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="#main"><span class="brand-mark" aria-hidden="true">it.</span><span>Большие проекты начинаются<br />с маленького вклада.</span></a><a class="text-link" href="#guide">Вернуться к гайду ↑</a></footer>
+</div>
+</body>
+</html>
+
+
+
+
+
