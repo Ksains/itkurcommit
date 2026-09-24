@@ -19,6 +19,9 @@ jobs:
       - name: Проверить сборку сайта
         run: node scripts/build.cjs
 
+      - name: Проверить скрипты обновления сервера
+        run: sh -n scripts/server-auto-update.sh scripts/install-server-auto-update.sh
+
       - name: Проверить Docker Compose
         run: docker compose config --quiet
       - name: Проверить Docker-образ
