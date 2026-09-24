@@ -108,6 +108,7 @@ git push -u origin onboarding/ВАШ_ЛОГИН</code></pre></div>
             <div class="form-grid">
               <label>Имя<input name="name" autocomplete="name" placeholder="Как к вам обращаться" required minlength="2" maxlength="100" /></label>
               <label>Логин GitHub<input name="github" placeholder="@yourlogin" autocapitalize="none" spellcheck="false" required maxlength="40" /></label>
+              <label>Дата рождения <small id="birth-date-help">Формат: ДД.ММ.ГГГГ, например 05.09.2007. Дата будет видна на сайте и в публичном репозитории.</small><input name="birthDate" type="text" inputmode="numeric" autocomplete="bday" placeholder="ДД.ММ.ГГГГ" required maxlength="10" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" aria-describedby="birth-date-help" /></label>
               <label>Направление<input name="direction" placeholder="Frontend, дизайн…" required minlength="2" maxlength="120" /></label>
               <label>Навыки<input name="skills" placeholder="HTML, CSS" required maxlength="1200" aria-describedby="skills-help" /><small id="skills-help">Не менее двух, через запятую.</small></label>
               <label class="full-width">О себе<textarea name="fact" placeholder="Что вам интересно? Чему хочется научиться?" required minlength="15" maxlength="1000" aria-describedby="fact-help"></textarea><small id="fact-help">Не менее 15 символов.</small></label>
