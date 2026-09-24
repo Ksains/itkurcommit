@@ -13,6 +13,7 @@ function card(profile) {
   const login=profile.github||'';
   if (/^@[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?$/i.test(login)) {const link=node('a',login);link.href=`https://github.com/${login.slice(1)}`;title.append(link);}
   header.append(avatar,title);article.append(header,node('p',profile.direction||'Ваше направление','label'));
+  if (profile.birthDate) article.append(node('p',`Дата рождения: ${profile.birthDate}`,'birth-date'));
   const skills=node('ul',undefined,'tags');
   for(const item of profile.skills||[])skills.append(node('li',item));
   article.append(skills,node('p',profile.fact||'Здесь появится информация о вас.','fact'));

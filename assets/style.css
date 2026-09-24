@@ -82,6 +82,7 @@ h1 span { color: #c3cec8; }
 .member-header a:hover { text-decoration: underline; }
 .avatar { width: 46px; height: 46px; flex-shrink: 0; border-radius: 12px; }
 .member-card > .label { color: var(--muted); font-size: 12px; letter-spacing: .025em; }
+.birth-date { color: var(--muted); font-size: 12px; margin-top: 8px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 12px 0 20px; list-style: none; }
 .tags li { max-width: 100%; background: #2b3033; border: 1px solid #454e49; border-radius: 5px; padding: 3px 8px; color: #cdd5d0; font-size: 11px; }
 .member-card p { white-space: pre-wrap; }
