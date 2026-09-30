@@ -1,0 +1,13 @@
+{
+  "name": "Мария",
+  "github": "@etozhevoron",
+  "birthDate": "12.01.2007",
+  "direction": "frontend",
+  "skills": [
+    "html",
+    "js"
+  ],
+  "fact": "фронтенду крутому и красивому",
+  "projectTitle": "",
+  "projectDescription": ""
+}
