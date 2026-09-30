@@ -1,0 +1,13 @@
+{
+  "name": "Иван",
+  "github": "@dickensent",
+  "birthDate": "22.09.2008",
+  "direction": "ML, Backend",
+  "skills": [
+    "C++",
+    "Python"
+  ],
+  "fact": "Хочу делать телеграмм ботиков и сайты, а также другие крутые проекты",
+  "projectTitle": "",
+  "projectDescription": ""
+}
